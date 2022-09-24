@@ -1,30 +1,44 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+    <div class="content">
+        <HeaderVue></HeaderVue>
+        <router-view/>
+    </div>
+    <div class="footer">
+        <FooterVue></FooterVue>
+    </div>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+    @import "assets/bootstrap.min.css";
 
-nav {
-  padding: 30px;
-}
+    #app {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .content {
+      flex: 1 0 auto;
+    }
+    .footer {
+      flex: 0 0 auto;
+    }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+    body, html {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
 </style>
+
+<script>
+    import HeaderVue from "./components/HeaderVue";
+    import FooterVue from "./components/FooterVue";
+
+    export default {
+        name: 'App',
+        components: {
+            FooterVue,
+            HeaderVue
+        },
+    }
+</script>
