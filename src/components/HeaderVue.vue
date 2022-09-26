@@ -21,6 +21,10 @@
                             </router-link>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" @click="logout">Выйти
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <router-link class="nav-link active" aria-current="page" :to="'/login'">Авторизация
                             </router-link>
                         </li>
@@ -36,8 +40,21 @@
 </template>
 
 <script>
+    import axios from "axios";
+
     export default {
-        name: "HeaderVue"
+        name: "HeaderVue",
+        methods: {
+            async logout() {
+                try {
+                    await axios.get('http://127.0.0.1:8000/api/logout');
+                    localStorage.removeItem('user_token');
+                    location.reload();
+                } catch (error) {
+                    console.log(error.response.data);
+                }
+            }
+        }
     }
 </script>
 
