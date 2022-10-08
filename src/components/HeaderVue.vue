@@ -17,7 +17,7 @@
                             <router-link class="nav-link active" aria-current="page" :to="'/'">Главная</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link class="nav-link active" aria-current="page" :to="'/'">Мои тренировки
+                            <router-link class="nav-link active" aria-current="page" :to="'/my-workouts'">Мои тренировки
                             </router-link>
                         </li>
                         <li class="nav-item">
