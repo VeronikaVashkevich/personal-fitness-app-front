@@ -47,7 +47,7 @@
         methods: {
             async logout() {
                 try {
-                    await axios.get('http://127.0.0.1:8000/api/logout');
+                    await axios.get('http://fitness-app-vv.herokuapp.com/api/logout');
                     localStorage.removeItem('user_token');
                     location.reload();
                 } catch (error) {

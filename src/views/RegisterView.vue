@@ -118,7 +118,7 @@
                 });
 
                 try {
-                    const res = await axios.post('http://127.0.0.1:8000/api/register', this.profile);
+                    const res = await axios.post('http://fitness-app-vv.herokuapp.com/api/register', this.profile);
 
                     localStorage.user_token = res.data.data.user_token;
 
